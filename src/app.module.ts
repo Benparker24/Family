@@ -1,12 +1,13 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
+import { FeedController } from './feedSystem/feed.controller';
 import { AppService } from './app.service';
-import { FeedService } from './repositories/feed.service';
+import { FeedRepository } from './feedSystem/feed.repository';
+import { FeedService } from './feedSystem/feed.service';
 import { PrismaService } from './repositories/prisma.service';
 
 @Module({
   imports: [],
-  controllers: [AppController],
-  providers: [AppService,FeedService, PrismaService],
+  controllers: [FeedController],
+  providers: [AppService,FeedRepository, PrismaService, FeedService],
 })
 export class AppModule {}

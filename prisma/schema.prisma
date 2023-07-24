@@ -14,4 +14,5 @@ model Feed {
   feedId   Int      @id @default(autoincrement())
   fedBy    String
   feedTime DateTime
+  isTest   Boolean  @default(true)
 }
